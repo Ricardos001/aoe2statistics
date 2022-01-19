@@ -1,0 +1,316 @@
+
+/*
+háttér : #E7D9B9
+betűszín: #a61931
+*/
+
+/*header*/
+
+.header{
+    display: flex;
+    padding: 20px 350px;
+}
+
+.statisztika{
+    width: 25%;
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar{
+    width: 75%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar ul{
+    display: flex;
+}
+
+.navbar ul li{
+    list-style: none;
+    padding: 0 15px;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.navbar ul li a:hover{
+    background: rgba(0,0,0, 0.3);
+}
+
+.navbar ul li a:visited{
+    color: black;
+}
+
+/*endheader*/
+
+.page-ageof-red{
+    color: #a61931;
+}
+
+.hover-zoom{
+    transition: 0.3s;
+}
+
+.hover-zoom:hover{
+    transform: scale(1.04);
+}
+
+body{
+    background: #E7D9B9;
+    font-family: 'tahoma','verdana','arial' !important;
+}
+
+input, input[type="password"], input[type="search"] {
+    font-family: 'tahoma','verdana','arial' !important;
+}
+
+.main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
+
+.page-kereso{
+    width: 70%;
+}
+
+.page-form-store{
+    margin: 0 auto;
+}
+
+.page-kereso form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.jatekos-kereso{
+    width: 60%;
+    margin: 60px 0 20px 0;
+    height: 50px;
+    border-radius: 15px;
+    padding: 0 20px;
+    border-style: none;
+    box-shadow: 0 0 6px 0 rgba(0,0,0, 0.4);
+    background: #b4aa94;
+
+    font-size: 16px;
+}
+
+.jatekos-kereso:focus {
+    outline-width: 0;
+}
+
+.no-player{
+    color: red;
+    margin: 8px 0 20px 0; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.jatekos-kereso-submit{
+    /*
+    height: 50px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0, 0.4);
+    background: #b4aa94;
+    margin: 0px 0 20px 0;
+    border-style: none;
+    */
+    background-color: #2b2824;
+    border-radius: 10px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    max-width: none;
+    min-height: 44px;
+    min-width: 10px;
+    outline: none;
+    overflow: hidden;
+    padding: 9px 20px 8px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 40%;
+    margin: 0px 0 20px 0;
+    transition: 0.3s;
+
+}
+
+.jatekos-kereso-submit:hover{
+    opacity: 0.75;
+}
+
+
+.page-jatekosok{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.page-jatekosok-title{
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+}
+
+.page-jatekosok-lista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-jatekos{
+    text-decoration: none;
+    color: black;
+
+    width: 95%;
+    background: #ada38b;
+    margin: 10px 0;
+    padding: 20px 30px;
+    border: solid 1px rgba(0,0,0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0, 0.4);
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.jatekos-both{
+    width: 20%;
+    text-align: center;
+}
+
+.jatekos-nev{
+    font-weight: bold;
+    
+}
+
+
+.jatekos-title-container{
+    border: solid 2px rgba(0,0,0, 0.3);
+    box-shadow: 0 0 6px 0 rgba(0,0,0, 0.2);
+    cursor: auto;
+    margin-bottom: 30px;
+}
+
+.jatekos-title{
+    font-weight: bold;
+}
+
+/*form*/
+
+.jatekos-store-label{
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.jatekos-store{
+    width: 50%;
+    margin: 5px 0 20px 0;
+    height: 40px;
+    border-radius: 15px;
+    padding: 0 20px;
+    border-style: none;
+    box-shadow: 0 0 6px 0 rgba(0,0,0, 0.4);
+    background: #b4aa94;
+
+    font-size: 16px;
+}
+
+.jatekos-store:focus {
+    outline-width: 0;
+}
+
+.store-submit{
+    margin-top: 20px;
+}
+
+/*player page*/
+
+.player-head-container{
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    border-bottom: solid 2px rgba(0,0,0, 0.1);
+}
+
+.player-title{
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.player-details-title{
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.player-details-content{
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.submit-delete{
+    background: red;
+}
+
+.jatekos-szerkesztese{
+    text-decoration: none;
+    transition: .3s;
+    padding: 5px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.jatekos-szerkesztese:visited{
+    color: black;
+    
+}
+
+.jatekos-szerkesztese:hover{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/*match search*/
+
+.filter{
+    width: 20%;
+    height: 41px;
+    border-radius: 10px;
+    padding-left: 15px;
+    background: rgba(0, 0, 0, 0.2); 
+}
+
+.filter:focus {
+    outline-width: 0;
+}

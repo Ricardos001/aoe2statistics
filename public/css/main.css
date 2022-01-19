@@ -1,0 +1,51 @@
+.hover-zoom2{
+    transition: .3s;
+}
+
+.hover-zoom2:hover{
+    transform: scale(1.04);
+}
+
+.page-main-container{
+    max-width: 1344px;
+    padding: 0 50px;
+    margin: 0 auto;
+}
+
+.page-brand-img{
+    width: 80%;
+    border-radius: 10px;
+}
+
+.navbar-brand{
+    margin-right: 0;
+}
+
+.navbar-brand:hover{
+    background: transparent !important;
+}
+
+.btn-outline-success{
+    background: rgb(80, 80, 80);
+    color: #fff;
+    border: none;
+    box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline-success:hover {
+    background: #000;
+    box-shadow: none;
+}
+
+
+@media(max-width: 500px){
+    .page-main-container{
+        padding: 0 10px;
+    }
+}
+
+
+/*login form*/
+.page-login-form{
+    color: black;
+}
