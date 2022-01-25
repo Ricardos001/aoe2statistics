@@ -36,7 +36,7 @@
         </div>
         <div class="player-title col-xxl-3 col-lg-4 col-md-6">
             <div class="player-title-inside">
-            <div class="player-details-title">Győzelmi rarány</div>
+            <div class="player-details-title">Győzelmi arány</div>
             <div class="player-details-content">{{ $winRate }}%</div>
             </div>
         </div>
@@ -106,14 +106,14 @@
         @foreach ($mostPlayedMaps as $game)
         <div class="col-md-4 player-title">
             <div class="page-gametime-stat-container player-title-inside">
-                <div class="page-gametime-title">{{ $game[0] }}</div>
+                <div class="page-gametime-title">{{ $game[0] }} ({{ $game[1] }})</div>
                 <div class="page-gametime-stat-content player-details-content">{{ $game[3] }}% ({{ $game[2] }}/{{ $game[1] }})</div>
             </div>
         </div>
         @endforeach
     </div>
 
-    <a href="/player/{{ $player->id + 1 }}">Tovább</a>
+    {{--<a href="/player/{{ $player->id + 1 }}">Tovább</a> --}}
     <div class="page-smart-title">Győzelmi arány a mérkőzés hossza alapján </div>
     <div class="page-gametime-stats-container row">
         @foreach($gameLengthStats as $game)

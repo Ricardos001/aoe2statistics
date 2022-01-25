@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 //use App\Http\MainControllers\MainController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\MainController2;
 
 
 
@@ -22,10 +23,10 @@ use App\Http\Controllers\MainController;
 //     return view('welcome');
 // });
 
-//Route::post('/player', [MainController::class, 'searchPlayer']);
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController2::class, 'index']);
 Route::get('/player/{id}', [MainController::class, 'player']);
-Route::get('/players', [MainController::class, 'players']); 
+Route::get('/players', [MainController2::class, 'players']); 
+Route::post('/player', [MainController2::class, 'searchPlayer']);
 //Route::post('/matches', [MainController::class, 'searchMatches']);
 //Route::get('/matches', [MainController::class, 'matches']); 
 //Route::post('/admin/new-player', [MainController::class, 'storeNewPlayer']);
@@ -48,5 +49,6 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [MainController2::class, 'admin'])->middleware('auth');    
 Route::get('/admin/new-player', [MainController::class, 'newPlayer'])->middleware('auth');    
 // Route::post('/admin/new-match', [MainController::class, 'storeNewPlayer']->middleware('auth'));    

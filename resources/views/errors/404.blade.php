@@ -65,6 +65,9 @@ div.text a:hover {
     color: red;
     text-decoration: underline; 
 }
+.page-bg-img{
+    display: none;
+}
 
 @media only screen and (max-width: 768px) {
     section.notFound {

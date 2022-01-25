@@ -1,9 +1,13 @@
 .hover-zoom2{
-    transition: .3s;
+    transition: .15s;
 }
 
 .hover-zoom2:hover{
-    transform: scale(1.04);
+    transform: scale(1.05);
+}
+
+a{
+    text-decoration: none;
 }
 
 .page-main-container{
@@ -48,4 +52,12 @@
 /*login form*/
 .page-login-form{
     color: black;
+}
+
+/*gb image*/
+
+.page-bg-img{
+    position: fixed;
+    z-index: -10;
+    opacity: 0.05;
 }

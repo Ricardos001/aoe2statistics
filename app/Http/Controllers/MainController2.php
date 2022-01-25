@@ -10,27 +10,36 @@ class MainController2 extends Controller
 {
     //controllers for v2 views
 
-    public function getPlayerWinrate($id){
-        $player = Players::findOrFail($id);
+    //MAIN FUNCTIONS
+    public function index(){
+        $players = Players::latest()->get();
 
-        $sum = count(Games::where('name', $player->name)->get()) + count(Games::where('opponent', $player->name)->get());
-        if ($sum == 0){
-            return 0;
-        }
-        $win = count(Games::where('winner', $player->name)->get());
-        return $playerWinRate = number_format($win/$sum*100, 2, '.', '');
+        return view('index', [
+            'players' => $players
+        ]);
     }
 
-    public function player($id){
-
-        $player = Players::findOrFail($id);
-        $games = Games::where('name', $player->name)->get();
-        
-        return view('player', [
-            'player' => $player,
-            'winRate' => $this->getPlayerWinrate($id),
-            'games' => $games,
+    //PLAYER FUNCTIONS
+    public function players(){
+        $players = Players::all();
+        return view('players', [
+            'players' => $players,
         ]);
+    }
+    public function searchPlayer(){
+        $player = Players::where('name', request('name'))->get();
+        if (!$player->isEmpty() && count($player)!=0){
+            $playerId = Players::where('name', request('name'))->first()->id;
+            return redirect("/player"."/".$playerId);
+        }else{
+            $players = Players::latest()->get();
+            $games = Games::latest()->get();
+            return view('index', [
+                'players' => $players,
+                'games' => $games,
+                'noPlayer' => 'Nincs '.request('name').' nevű játékos',
+            ]);
+        }
     }
 
 }

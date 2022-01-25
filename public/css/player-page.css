@@ -73,3 +73,9 @@
 .page-color-4{
     background: rgb(45, 65, 79);
 }
+
+@media(max-width: 500px){
+    .player-data{
+        padding: 0 30px;
+    }
+}

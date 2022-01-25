@@ -1,0 +1,20 @@
+.page-jatekosok-title{
+    padding: 10px 20px;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.player-container{
+    padding: 20px;
+}
+.player-container-inside{
+    background: #3a3a3a;
+    border-radius: 10px;
+    padding: 10px;
+}
+.jatekos-both{
+    text-align: center;
+}
+.jatekos-nev{
+    padding-top: 5px;
+}

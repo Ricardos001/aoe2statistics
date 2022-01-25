@@ -13,6 +13,7 @@
         @yield('css')
     </head>
     <body>
+        <img src="/images/background/basic.jpg" alt="bg-img" class="page-bg-img">
         <div class="page-main-container">
             <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -49,8 +50,9 @@
                     </li>
                     
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Keresés" aria-label="Search">
+                <form class="d-flex" action="/player" method="POST">
+                    @csrf
+                    <input class="form-control me-2" type="text" placeholder="Keresés" aria-label="Search" name="name" maxlength="30">
                     <button class="btn btn-outline-success" type="submit">Keresés</button>
                 </form>
                 </div>
