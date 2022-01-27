@@ -44,7 +44,6 @@ Route::post('/player', [MainController2::class, 'searchPlayer']);
 //Route::post('/admin/delete-match/{id}', [MainController::class, 'deleteMatch']);
 
 Auth::routes([
-    'register' => false,
     'confirm' => false,
     'reset' => false
 ]);
