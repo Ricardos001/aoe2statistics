@@ -35,9 +35,11 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @if (Auth::check())
-                            <li><a class="dropdown-item" href="#">Játékosok</a></li>
-                            <li><a class="dropdown-item" href="#">Mérkőzések</a></li>
-                            <li><a class="dropdown-item" href="/admin/new-player">Új játékos</a></li>
+                        <li><a class="dropdown-item" href="#">Admin főoldal</a></li>
+                        <li><a class="dropdown-item" href="/admin/new-player">Új játékos</a></li>
+                        <li><a class="dropdown-item" href="#">Új mérkőzés</a></li>
+                        <li><a class="dropdown-item" href="/admin/players">Játékosok</a></li>
+                        <li><a class="dropdown-item" href="#">Mérkőzések</a></li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>

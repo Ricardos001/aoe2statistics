@@ -1,7 +1,7 @@
 @extends('layouts.v2.main-layout')
 
 @section('css')
-    <link href = "{{asset('css/player-page.css')}}" rel = "stylesheet">
+    <link href = "/css/player-page.css" rel = "stylesheet">
 @endsection
 
 @section('content')

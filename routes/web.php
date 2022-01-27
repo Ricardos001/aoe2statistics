@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\MainControllers\MainController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\MainController2;
+use App\Http\Controllers\AdminController;
 
 
 
@@ -50,5 +51,9 @@ Auth::routes([
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [MainController2::class, 'admin'])->middleware('auth');    
-Route::get('/admin/new-player', [MainController::class, 'newPlayer'])->middleware('auth');    
+Route::get('/admin/new-player', [AdminController::class, 'newPlayerGet'])->middleware('auth');
+Route::post('/admin/new-player', [AdminController::class, 'newPlayerPost'])->middleware('auth');   
+Route::post('/admin/delete-player/{id}', [AdminController::class, 'deletePlayer'])->middleware('auth');
+Route::get('/admin/players', [AdminController::class, 'players'])->middleware('auth');
+
 // Route::post('/admin/new-match', [MainController::class, 'storeNewPlayer']->middleware('auth'));    

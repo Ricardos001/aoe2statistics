@@ -1,7 +1,7 @@
 @extends('layouts.v2.main-layout')
 
 @section('css')
-    <link href = "{{asset('css/fooldal.css')}}" rel = "stylesheet">
+    <link href = "/css/fooldal.css" rel = "stylesheet">
 @endsection
 
 @section('content')
