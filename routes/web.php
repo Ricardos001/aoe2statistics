@@ -51,7 +51,7 @@ Auth::routes([
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [MainController2::class, 'admin'])->middleware('auth');    
 Route::get('/admin/new-player', [AdminController::class, 'newPlayerGet']);
-Route::post('/admin/new-player', [AdminController::class, 'newPlayerPost'])->middleware('auth');   
+Route::post('/admin/new-player', [AdminController::class, 'newPlayerPost']);   
 Route::post('/admin/delete-player/{id}', [AdminController::class, 'deletePlayer'])->middleware('auth');
 Route::get('/admin/players', [AdminController::class, 'players'])->middleware('auth');
 
