@@ -28,6 +28,8 @@ Route::get('/', [MainController2::class, 'index']);
 Route::get('/player/{id}', [MainController::class, 'player']);
 Route::get('/players', [MainController2::class, 'players']); 
 Route::post('/player', [MainController2::class, 'searchPlayer']);
+Route::get('/users', [AdminController::class, 'users']);
+
 //Route::post('/matches', [MainController::class, 'searchMatches']);
 //Route::get('/matches', [MainController::class, 'matches']); 
 //Route::post('/admin/new-player', [MainController::class, 'storeNewPlayer']);

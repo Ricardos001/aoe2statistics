@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Players;
 use App\Models\Games;
+use App\Models\User;
 
 class AdminController extends Controller
-{
+{   
+    //users
+    public function users(){
+        dd(User::all());
+    }
     //player
     public function newPlayerGet(){
         return view('new-player');
