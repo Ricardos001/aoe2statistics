@@ -9,9 +9,11 @@ use App\Models\User;
 
 class AdminController extends Controller
 {   
+
+
     //users
-    public function users(){
-        dd(User::all());
+    public function adminIndex(){
+        return view('admin.admin');
     }
     //player
     public function newPlayerGet(){
@@ -45,7 +47,25 @@ class AdminController extends Controller
         
         $player->save();
 
-        dd($player);
+        return redirect('/admin/players');
+
+    }
+    public function setPlayerGet($id){
+        $player = Players::findOrFail($id);
+        return view('set-player', [
+            'player' => $player
+        ]);
+    }
+    public function setPlayerPost(Request $request,$id){
+        $this->validate($request, [
+            'elo' => 'required',
+            'country' => 'required',
+        ]); 
+        $player = Players::find($id);
+        $player->elo = $request->input('elo');
+        $player->country = $request->input('country');
+        $player->save();
+        return redirect("/admin/players");
     }
     public function deletePlayer($id){
         $player = Players::find($id);
@@ -53,4 +73,61 @@ class AdminController extends Controller
         return redirect('/admin/players');
     }
     //match
+    public function matches(){
+        $matches = Games::paginate(10);
+        return view('admin.matches',
+            ['matches' => $matches]
+        );
+    }
+    public function newMatchGet(){
+        return view('new-match');   
+    }
+    public function newMatchPost(){
+        $game = new Games();
+
+        $game->name = request('name');
+        $game->civ = request('civ');
+        $game->opponent = request('opponent');
+        $game->opponentCiv = request('opponentCiv');
+        $game->map = request('map');
+        $game->winner = request('winner');
+        $game->gameTime = request('gameTime');
+
+        $game->save();
+
+        return redirect('/admin/players');
+    }
+    public function setMatchGet($id){
+        $game = Games::findOrFail($id);
+        
+        return view('set-match', [
+            'game' => $game]);
+    }
+    public function setMatchPost(Request $request, $id){
+        $this->validate($request, [
+            'name' => 'required',
+            'civ' => 'required',
+            'opponent' => 'required',
+            'map' => 'required',
+            'winner' => 'required',
+            'gameTime' => 'required',
+        ]); 
+        $game = Games::find($id);
+
+        $game->name = $request->name;
+        $game->civ = $request->civ;
+        $game->opponent = $request->opponent;
+        $game->opponentCiv = $request->opponentCiv;
+        $game->map = $request->map;
+        $game->winner = $request->winner;
+        $game->gameTime = $request->gameTime;
+
+        $game->save();
+        return redirect("/admin");
+    }
+    public function deleteMatch($id){
+        $game = Games::find($id);
+        $game->delete();
+        return redirect("/admin");
+    }
 }

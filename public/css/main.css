@@ -12,6 +12,12 @@ body{
 
 a{
     text-decoration: none;
+    transition: .25s;
+}
+
+a:active{
+    background-color: rgb(50, 50, 50) !important;
+    transition: .1s;
 }
 
 .page-main-container{

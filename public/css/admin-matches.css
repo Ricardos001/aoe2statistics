@@ -1,0 +1,21 @@
+ 
+ .match-box{
+    background: #3a3a3a;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor:pointer;
+ }
+ .match-box-inside{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ /*pagination */
+
+ .pagination{
+     justify-content: center;
+     color: black;
+ }

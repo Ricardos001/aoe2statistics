@@ -28,7 +28,7 @@ Route::get('/', [MainController2::class, 'index']);
 Route::get('/player/{id}', [MainController::class, 'player']);
 Route::get('/players', [MainController2::class, 'players']); 
 Route::post('/player', [MainController2::class, 'searchPlayer']);
-Route::get('/users', [AdminController::class, 'users']);
+//Route::get('/users', [AdminController::class, 'users']);
 
 //Route::post('/matches', [MainController::class, 'searchMatches']);
 //Route::get('/matches', [MainController::class, 'matches']); 
@@ -51,10 +51,20 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admin', [MainController2::class, 'admin'])->middleware('auth');    
-Route::get('/admin/new-player', [AdminController::class, 'newPlayerGet']);
-Route::post('/admin/new-player', [AdminController::class, 'newPlayerPost']);   
+Route::get('/admin', [AdminController::class, 'adminIndex'])->middleware('auth');
+
+//admin players
+Route::get('/admin/new-player', [AdminController::class, 'newPlayerGet'])->middleware('auth');
+Route::post('/admin/new-player', [AdminController::class, 'newPlayerPost'])->middleware('auth');   
 Route::post('/admin/delete-player/{id}', [AdminController::class, 'deletePlayer'])->middleware('auth');
+Route::get('/admin/set-player/{id}', [AdminController::class, 'setPlayerGet']);
+Route::post('/admin/set-player/{id}', [AdminController::class, 'setPlayerPost']);
 Route::get('/admin/players', [AdminController::class, 'players'])->middleware('auth');
 
-// Route::post('/admin/new-match', [MainController::class, 'storeNewPlayer']->middleware('auth'));    
+//admin matches
+Route::get('/admin/matches', [AdminController::class, 'matches'])->middleware('auth');
+Route::get('/admin/new-match', [AdminController::class, 'newMatchGet'])->middleware('auth');
+Route::post('/admin/new-match', [AdminController::class, 'newMatchPost'])->middleware('auth');
+Route::get('/admin/set-match/{id}', [AdminController::class, 'setMatchGet'])->middleware('auth');
+Route::post('/admin/set-match/{id}', [AdminController::class, 'setMatchPost'])->middleware('auth'); 
+Route::post('/admin/delete-match/{id}', [AdminController::class, 'deleteMatch'])->middleware('auth');  
