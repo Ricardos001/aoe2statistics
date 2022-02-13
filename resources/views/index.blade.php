@@ -6,24 +6,7 @@
 
 @section('content')
 <div class="main-container">
-<form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ url('save') }}" >
-                   
-            <div class="row">
- 
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="file" name="image" placeholder="Choose image" id="image">
-                    @error('image')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                    </div>
-                </div>
-                   
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                </div>
-            </div>     
-        </form>
+
     <div class="row" id="jatekosok">
         <div class="page-jatekosok-title col-md-12">Játékosok</div>
             @foreach ( $players as $player)
