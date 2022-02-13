@@ -10,8 +10,9 @@
         <div class="player-head-inside row">
             <div class="player-img-container col-md-2"><img src="/images/players/default-player.jpg" alt="" class="img-thumbnail player-img"></div>
             <div class="player-data col-md-10">
-                <div class="player-name">{{ $player->name }} <div class="player-flag-container" ><img src="/images/flags/1.png" class="player-flag" alt="" data-bs-toggle="tooltip" data-bs-placement="top" title="Magyarország"></div></div>
+                <div class="player-name">{{ $player->name }} <div class="player-flag-container" ><img src="/images/flags/1.png" class="player-flag" alt="" data-bs-toggle="tooltip" data-bs-placement="top" title="Magyarország"></div>  </div>
                 <div class="player-data-elo">Elo: {{ $player->elo }}</div>
+                @if (Auth::check()) <a href="/admin/set-player/{{ $player->id }}" class="btn btn-secondary">Szerkesztés</a> @endif
             </div>
         </div>
     </div>

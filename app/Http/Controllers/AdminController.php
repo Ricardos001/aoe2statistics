@@ -62,6 +62,7 @@ class AdminController extends Controller
             'country' => 'required',
         ]); 
         $player = Players::find($id);
+        $player->name = $request->input('name');
         $player->elo = $request->input('elo');
         $player->country = $request->input('country');
         $player->save();
