@@ -8,4 +8,8 @@
     <a href="/admin/players" class="btn btn-secondary">Játékosok</a>
     <a href="/admin/matches" class="btn btn-secondary">Mérkőzések</a>
     </div>
+    @if (Auth::check() && Auth::id() == 1)
+    hello
+    @endif
+
 @endsection

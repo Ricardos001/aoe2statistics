@@ -23,7 +23,7 @@ class LoginController extends Controller
     use AuthenticatesUsers;
     protected function authenticated(Request $request, $user)
     {
-    return redirect('/player/1');
+    return redirect('/admin');
     
     }
     /**
