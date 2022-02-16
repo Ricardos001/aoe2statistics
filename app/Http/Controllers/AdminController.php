@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Players;
 use App\Models\Games;
 use App\Models\User;
+use File;
 
 class AdminController extends Controller
 {   
@@ -146,5 +147,16 @@ class AdminController extends Controller
         $input['imagename'] = $id . '.' . $image->getClientOriginalExtension();
         $destinationPath = public_path('/images/players');
         $image->move($destinationPath, $input['imagename']);
+        return redirect('/admin/players');
+    }
+    //delete images
+    public function deletePlayerImagePost($id)
+    {
+        if(File::exists(public_path('images/players/'.$id.'.jpg'))){
+            File::delete(public_path('images/players/'.$id.'.jpg'));
+        }else{
+            dd('File does not exists.');
+        }
+        return redirect('/admin/players');
     }
 }

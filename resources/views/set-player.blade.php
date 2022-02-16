@@ -47,7 +47,7 @@
     <div class="page-submit col-12"><input class="jatekos-kereso-submit store-submit" type="submit" value="Játékos szerkesztése"></div>
 </form>
 
-<form class="page-submit-form row mt-5" action="/admin/set-player-image/{{ $player->id }}"  enctype="multipart/form-data" method="POST">
+<form class="page-submit-form page-submit-form-upload-img row mt-5" action="/admin/set-player-image/{{ $player->id }}"  enctype="multipart/form-data" method="POST">
     @csrf
     <div class="col-lg-4 col-md-6">
         <label for="profilePicture" class="jatekos-store-label">Kép választása: </label>
@@ -67,5 +67,10 @@
     </div>
     <div class="page-submit col-12"><input class="jatekos-kereso-submit store-submit" type="submit" value="Profilkép feltöltése"></div>
 </form>
+<form class="page-submit-form page-submit-form-delete-img row " action="/admin/delete-player-image/{{ $player->id }}"  enctype="multipart/form-data" method="POST">
+    @csrf
+    <div class="page-submit col-12"><input class="jatekos-kereso-submit store-submit btn btn-danger" type="submit" value="Profilkép törlése"></div>
+</form>
+
 
 @endsection

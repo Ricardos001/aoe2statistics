@@ -62,6 +62,7 @@ Route::post('/admin/set-player/{id}', [AdminController::class, 'setPlayerPost'])
 Route::get('/admin/players', [AdminController::class, 'players'])->middleware('auth');
 
 Route::post('/admin/set-player-image/{id}', [AdminController::class, 'setPlayerImagePost'])->middleware('auth');
+Route::post('/admin/delete-player-image/{id}', [AdminController::class, 'deletePlayerImagePost'])->middleware('auth');
 
 //admin matches
 Route::get('/admin/matches', [AdminController::class, 'matches'])->middleware('auth');
