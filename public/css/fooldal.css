@@ -18,3 +18,15 @@
 .jatekos-nev{
     padding-top: 5px;
 }
+.player-img-admin, .player-img{
+    max-height: 120px;
+}
+.jatekos-kep-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+.player-container-inside-admin{
+    height: 260px;
+}

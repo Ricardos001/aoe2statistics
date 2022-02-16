@@ -47,4 +47,25 @@
     <div class="page-submit col-12"><input class="jatekos-kereso-submit store-submit" type="submit" value="Játékos szerkesztése"></div>
 </form>
 
+<form class="page-submit-form row mt-5" action="/admin/set-player-image/{{ $player->id }}"  enctype="multipart/form-data" method="POST">
+    @csrf
+    <div class="col-lg-4 col-md-6">
+        <label for="profilePicture" class="jatekos-store-label">Kép választása: </label>
+        <input class="jatekos-store" type="file" id="profilePicture" name="profilePicture" required maxlength="30">
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="jatekos-store-label">Jelenlegi profilkép: </div>
+        @php 
+        $filePath = '/images/players/'.$player->id.'.jpg';
+        @endphp
+        @if ( \File::exists(public_path($filePath)) ) 
+            <img src="/images/players/{{ $player->id }}.jpg" alt="default-player-img" class="img-thumbnail player-img preview-img">
+	    @else
+            <img src="/images/players/default-player.jpg" alt="default-player-img" class="img-thumbnail player-img preview-img">
+	    @endif
+
+    </div>
+    <div class="page-submit col-12"><input class="jatekos-kereso-submit store-submit" type="submit" value="Profilkép feltöltése"></div>
+</form>
+
 @endsection

@@ -131,4 +131,20 @@ class AdminController extends Controller
         $game->delete();
         return redirect("/admin");
     }
+
+    //images uploading
+    public function setPlayerImagePost(Request $request, $id){
+        $validatedData = $request->validate([
+            'profilePicture' => 'required',
+        ]);
+        //$path = $request->file('profilePicture')->store('public/images/players');
+        // $path = $request->file('profilePicture')->store('/','public');
+        // $md5Name = md5_file($request->file('profilePicture')->getRealPath());
+        // $guessExtension = $request->file('profilePicture')->guessExtension();
+        // $file = $request->file('profilePicture')->storeAs('public/images/players', $md5Name.'.'.$guessExtension  ,'your_disk');
+        $image = $request->file('profilePicture');
+        $input['imagename'] = $id . '.' . $image->getClientOriginalExtension();
+        $destinationPath = public_path('/images/players');
+        $image->move($destinationPath, $input['imagename']);
+    }
 }

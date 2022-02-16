@@ -8,7 +8,16 @@
 <div class="main-container">
     <div class="player-head row">
         <div class="player-head-inside row">
-            <div class="player-img-container col-md-2"><img src="/images/players/default-player.jpg" alt="" class="img-thumbnail player-img"></div>
+            <div class="player-img-container col-md-2">
+                @php 
+                    $filePath = '/images/players/'.$player->id.'.jpg';
+                @endphp
+                @if ( \File::exists(public_path($filePath)) ) 
+                    <img src="/images/players/{{ $player->id }}.jpg" alt="player-img" class="img-thumbnail player-img player-img-profile">
+                @else
+                    <img src="/images/players/default-player.jpg" alt="default-player-img" class="img-thumbnail player-img player-img-profile">
+                @endif
+            </div>
             <div class="player-data col-md-10">
                 <div class="player-name">{{ $player->name }} <div class="player-flag-container" ><img src="/images/flags/1.png" class="player-flag" alt="" data-bs-toggle="tooltip" data-bs-placement="top" title="Magyarország"></div>  </div>
                 <div class="player-data-elo">Elo: {{ $player->elo }}</div>

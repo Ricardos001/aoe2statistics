@@ -71,3 +71,7 @@ a:active{
     z-index: -10;
     opacity: 0.05;
 }
+
+.preview-img{
+    max-height: 100px;
+}
